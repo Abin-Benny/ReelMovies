@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="sdetail bg-secondary">
+    <div class="container-fluid">
+        <div class="row mt-5">
+            {% for i in movies %}
+            <div class="col-md-2" id="cards">
+                <div class="card  bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{i.image.url}}" height="300px" alt="Card image cap">
+                    <div class="card-body">
+                        <center><bold><h6 class="card-text text-white">{{i.movie_name}}</h6></bold></center>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
