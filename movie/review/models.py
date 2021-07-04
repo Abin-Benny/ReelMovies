@@ -1,10 +1,12 @@
 from django.db import models
 from category.models import category
 from genre.models import genre
+from django.urls import reverse
 
 # Create your models here.
 class details(models.Model):
     movie_name = models.CharField(max_length=250)
+    slug = models.SlugField(max_length=100,unique=True)
     description = models.CharField(max_length=5000)
     director = models.CharField(max_length=100)
     writer = models.CharField(max_length=100)
@@ -17,4 +19,7 @@ class details(models.Model):
 
     def __str__(self):
         return str(self.movie_name)
+
+    def get_url(self):
+        return reverse('movie_details', args=[self.slug])
 

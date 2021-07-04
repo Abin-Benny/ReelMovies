@@ -15,3 +15,10 @@ def index(request):
         movies = details.objects.all()
     return render(request,"index.html",{'movies':movies})
 
+def movie_details(request,movie_slug):
+    try:
+        movies = details.objects.get(slug=movie_slug)
+    except Exception as e:
+        raise e
+    context={'movies': movies}
+    return render(request, "movie_details.html",context)

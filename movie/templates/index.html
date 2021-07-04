@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
 {% block content %}
 
 <section class="sdetail bg-secondary">
@@ -8,9 +13,9 @@
             {% for i in movies %}
             <div class="col-md-2" id="cards">
                 <div class="card  bg-dark" style="width: 18rem;">
-                    <img class="card-img-top" src="{{MEDIA_URL}}{{i.image.url}}" height="300px" alt="Card image cap">
+                    <a href="{{ i.get_url }}"><img class="card-img-top" src="{{MEDIA_URL}}{{i.image.url}}" height="300px" alt="Card image cap"></a>
                     <div class="card-body">
-                        <center><bold><h6 class="card-text text-white">{{i.movie_name}}</h6></bold></center>
+                        <center><bold><a href="{{ i.get_url }}" class="card-text text-white">{{i.movie_name}}</a></bold></center>
                     </div>
                 </div>
             </div>
