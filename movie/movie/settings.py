@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'review',
     'category',
     'genre',
+    'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,5 @@ STATICFILES_DIRS=[STATIC_DIR,]
 
 MEDIA_URL='/uploads/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'uploads')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

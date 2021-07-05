@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<section class="section-content padding-y bg-secondary">
+
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+	<div class="card mx-auto bg-dark text-white" style="max-width:520px; margin-top:40px;">
+      <article class="card-body">
+		  <header class="mb-4"><h4 class="card-title"><span class="text-danger">Sign</span> up</h4></header>
+		<form method="POST">
+				{{form | crispy}}
+
+			    <div class="form-group">
+			        <br><button type="submit" class="btn btn-success btn-block"> Register  </button>
+			    </div> <!-- form-group// -->
+			    <div class="form-group">
+					 <p class="text-center mt-4">Have an account? <a href="" class="text-danger">Log In</a></p>
+		        </div> <!-- form-group end.// -->
+		</form>
+		</article><!-- card-body.// -->
+    </div> <!-- card .// -->
+
+    <br><br>
+<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+
+</section>
+
+{% endblock %}

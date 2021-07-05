@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 import review.reviewurls
+import accounts.accounturls
 import genre.genreurls
 import category.categoryurls
 from django.conf.urls.static import static
@@ -26,4 +27,5 @@ urlpatterns = [
     path('',include(review.reviewurls)),
     path('genre/', include(genre.genreurls)),
     path('category/', include(category.categoryurls)),
+    path('accounts/', include(accounts.accounturls)),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
