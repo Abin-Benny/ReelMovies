@@ -46,8 +46,18 @@
         </li>
             {% endfor %}
       </ul>
-    </div> <!-- collapse .// -->
-  </div> <!-- container .// -->
+    </div>
+      <div class="widgets-wrap float-lg-right">
+          <div class="widget-header icontext">
+				<div class="text">
+					<span class="text-muted">Welcome!</span>
+					<div>
+						<a href="{% url 'login' %}">Sign in</a> |
+						<a href="{% url 'register' %}"> Register</a>
+					</div>
+				</div>
+          </div>
+      </div>
 </nav>
 {% block content %}
 
@@ -61,8 +71,9 @@
       <!-- Section: CTA -->
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
-          <span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-light btn-rounded">Sign up!</button></a>
+            {% block account %}
+
+            {% endblock %}
         </p>
       </section>
       <!-- Section: CTA -->
