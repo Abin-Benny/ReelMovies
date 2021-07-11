@@ -6,86 +6,75 @@ Movie Details
 {% endblock %}
 
 {% block content %}
+
 <section class="bg-secondary">
-	<div class="card m-5 bg-dark">
-	<div class="row no-gutters">
-		<aside class="col-md-4">
-			<article class="gallery-wrap">
-				<div class="img-big-wrap">
-					 <center><img src="{{MEDIA_URL}}{{movies.image.url}}" class="rounded p-5"></center>
+	<center>
+		<div class="card bg-dark mt-5" style="max-width:75%">
+			<div class="row no-gutters">
+				<div class="col-sm-4" style="background: #868e96;">
+					<img src="{{MEDIA_URL}}{{movies.image.url}}" class="card-img-top h-100" alt="...">
 				</div>
-
-			</article>
-		</aside>
-		<main class="col-md-8 border-left">
-			<article class="content-body m-5 text-white">
-				<h2 class="title">{{movies.movie_name}}</h2>
-				<div class="mb-3 mt-3">
-					<button type="button" class="btn btn-secondary">{{movies.Genre}}</button>
-				</div>
-				<p>{{movies.description}}</p>
-				<hr>
-				<div class="row">
-					<div class="item-option-select">
-						<h6 class="text-primary"><bold class="text-white">Director</bold>&nbsp&nbsp{{movies.director}}</h6>
+				<div class="col-sm-8">
+					<div class="card-body text-white">
+						<div class="row">
+							<div class="item-option-select ml-5">
+								<h2 class="card-title">{{movies.movie_name}}</h2>
+								<button type="button" class="btn btn-secondary">{{movies.Genre}}</button>
+							</div>
+						</div>
+						<p class="card-text mt-3">{{movies.description}}</p>
+						<hr>
+						<div class="row">
+							<div class="item-option-select">
+								<h6 class="text-primary ml-3"><bold class="text-white">Director</bold>&nbsp&nbsp{{movies.director}}</h6>
+							</div>
+						</div>
+							<hr>
+						<div class="row">
+							<div class="item-option-select">
+								<h6 class="text-primary ml-3"><bold class="text-white">Writers</bold>&nbsp&nbsp{{movies.writer}}</h6>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="item-option-select">
+								<h6 class="text-primary ml-3"><bold class="text-white">Cast</bold>&nbsp&nbsp{{movies.cast}}</h6>
+							</div>
+						</div>
 					</div>
 				</div>
-				<hr>
-				<div class="row">
-					<div class="item-option-select">
-						<h6 class="text-primary"><bold class="text-white">Writers</bold>&nbsp&nbsp{{movies.writer}}</h6>
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<div class="item-option-select">
-						<h6 class="text-primary"><bold class="text-white">Cast</bold>&nbsp&nbsp{{movies.cast}}</h6>
-					</div>
-				</div>
-			</article>
-		</main>
-	</div>
-</div>
-
-
-<br>
-
-<div class="row">
-			<div class="col-md-9">
-
-	<header class="section-heading">
-		<h3>Customer Reviews </h3>
-
-	</header>
-
-	<article class="box mb-3">
-		<div class="icontext w-100">
-			<img src="./images/avatars/avatar1.jpg" class="img-xs icon rounded-circle">
-			<div class="text">
-				<span class="date text-muted float-md-right">24.04.2020 </span>
-				<h6 class="mb-1">Mike John </h6>
-
 			</div>
-		</div> <!-- icontext.// -->
-		<div class="mt-3">
-			<p>
-				Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip
-			</p>
+    	</div>
+	</center>
+	<br>
+	<div class="row">
+		<div class="col-md-9">
+			<header class="section-heading">
+				<h3>Customer Reviews </h3>
+			</header>
+
+			<article class="box mb-3">
+				<div class="icontext w-100">
+					<img src="./images/avatars/avatar1.jpg" class="img-xs icon rounded-circle">
+					<div class="text">
+						<span class="date text-muted float-md-right">24.04.2020 </span>
+						<h6 class="mb-1">Mike John </h6>
+					</div>
+				</div>
+				<div class="mt-3">
+					<p>
+						Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip
+					</p>
+				</div>
+			</article>
 		</div>
-	</article>
-
-
-
-	</div> <!-- col.// -->
-</div> <!-- row.// -->
-
-
-</div> <!-- container .//  -->
-
+	</div>
 </section>
+{% endblock %}
 
-
-
+{% block account %}
+    <span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-light btn-rounded">Register</button></a>
 {% endblock %}

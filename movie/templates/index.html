@@ -24,6 +24,10 @@ Home
     </div>
 </section>
 {% endblock %}
+{% block account %}
+    <span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-light btn-rounded">Register</button></a>
+{% endblock %}
 {% block sweet %}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
