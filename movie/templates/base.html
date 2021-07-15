@@ -50,11 +50,9 @@
       <div class="widgets-wrap float-lg-right">
           <div class="widget-header icontext">
 				<div class="text">
-					<span class="text-muted">Welcome!</span>
-					<div>
-						<a href="{% url 'login' %}">Sign in</a> |
-						<a href="{% url 'register' %}"> Register</a>
-					</div>
+                    {% block accounts %}
+
+                    {% endblock %}
 				</div>
           </div>
       </div>

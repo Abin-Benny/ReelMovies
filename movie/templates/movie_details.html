@@ -5,6 +5,15 @@
 Movie Details
 {% endblock %}
 
+{% block accounts %}
+<span class="text-muted">Welcome!</span>
+<div>
+	<a href="{% url 'login' %}">Sign in</a> |
+    <a href="{% url 'register' %}"> Register</a>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <section class="bg-secondary">

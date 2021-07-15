@@ -17,14 +17,17 @@ def user_register(request):
         form = UserForm()
     return render(request, 'register.html', {'form': form})
 
-'''def user_login(request):
+def user_login(request):
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
+        print(username)
         password = request.POST['password']
-        user = authenticate(request, email=email, password=password)
+        print(password)
+        user = authenticate(request,username=username, password=password)
+        print(user)
         if user is not None:
-            login(request, user)
+            login(request,user)
             return redirect("index")
-    return render(request,"login.html")'''
+    return render(request,"login.html")
 
 
