@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'review',
     'category',
     'genre',
+    'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # Internationalization
@@ -134,3 +139,5 @@ STATICFILES_DIRS=[STATIC_DIR,]
 
 MEDIA_URL='/uploads/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'uploads')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

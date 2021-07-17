@@ -50,11 +50,17 @@
       <div class="widgets-wrap float-lg-right">
           <div class="widget-header icontext">
 				<div class="text">
+<<<<<<< HEAD
 					<span class="text-muted">Welcome!</span>
 					<div>
 						<a href="{% url 'login' %}">Sign in</a> |
 						<a href="{% url 'register' %}"> Register</a>
 					</div>
+=======
+                    {% block accounts %}
+
+                    {% endblock %}
+>>>>>>> accounts
 				</div>
           </div>
       </div>
@@ -72,6 +78,7 @@
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
           <button type="button" class="btn btn-outline-light btn-rounded">
             Sign up!
@@ -81,6 +88,11 @@
 
             {% endblock %}
 >>>>>>> 5326321 (Registration is done properly.UserForm is inherited from UserCreationForm.Registration is done by using django inbuilt user model.)
+=======
+            {% block account %}
+
+            {% endblock %}
+>>>>>>> accounts
         </p>
       </section>
       <!-- Section: CTA -->
