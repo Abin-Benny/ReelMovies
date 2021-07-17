@@ -91,6 +91,10 @@ Movie Details
 {% endblock %}
 
 {% block account %}
-    <span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
-    <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-light btn-rounded">Register</button></a>
+	  {% if user.is_authenticated %}
+			 <p><span class="me-3 text-danger">{{user.first_name}}</span> Now you are in <span class="text-success">Online</span></p>
+      {% else %}
+		<span class="me-3">Register for free</span>&nbsp&nbsp&nbsp&nbsp
+    	<a href="{% url 'register' %}"><button type="button" class="btn btn-outline-light btn-rounded">Register</button></a>
+	  {% endif %}
 {% endblock %}

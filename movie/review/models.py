@@ -2,7 +2,7 @@ from django.db import models
 from category.models import category
 from genre.models import genre
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 # Create your models here.
 class details(models.Model):
     movie_name = models.CharField(max_length=250)
@@ -23,3 +23,16 @@ class details(models.Model):
     def get_url(self):
         return reverse('movie_details', args=[self.slug])
 
+class reviews(models.Model):
+    movie = models.ForeignKey(details, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=250,blank=True)
+    review = models.TextField(max_length=500,blank=True)
+    rating = models.FloatField()
+    ip = models.CharField(max_length=250,blank=True)
+    status = models.BooleanField(default=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.title)
