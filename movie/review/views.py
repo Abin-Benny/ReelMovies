@@ -16,7 +16,7 @@ def index(request):
             messages.info(request, "Requested movie is not available.")
             return render(request, "index.html", {'movies':movies})
     else:
-        movies = details.objects.all()
+        movies = details.objects.all().order_by('Category__category_name')
     return render(request,"index.html",{'movies':movies})
 
 

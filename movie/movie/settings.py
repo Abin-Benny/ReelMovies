@@ -121,7 +121,7 @@ AUTHENTICATION_BACKENDS = (
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'Asia/Kolkata' #'UTC'  -for american time
 
 USE_I18N = True
 
@@ -141,3 +141,15 @@ MEDIA_URL='/uploads/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'uploads')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+'''EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'abinbenny95@gmail.com'
+EMAIL_HOST_PASSWORD = 'Your Email Password'''
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
