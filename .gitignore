@@ -1,4 +1,4 @@
 uploads\categories
 uploads\images
-.env
+movie/.env
 .venv
