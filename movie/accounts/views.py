@@ -27,14 +27,18 @@ def user_login(request):
     else:
         if request.method == 'POST':
             username = request.POST['username']
-            print(username)
             password = request.POST['password']
-            print(password)
             user = authenticate(request,username=username, password=password)
-            print(user)
+
             if user is not None:
+                '''if user.is_superuser or user.is_staff:
+                    login(request, user)
+                    return redirect('/SecureAdminLogin/')
+                else:'''
                 login(request,user)
                 return redirect("index")
+            else:
+                return render(request, "login.html", {'msg': "Invalid Credentials"})
         return render(request,"login.html")
 
 

@@ -23,7 +23,8 @@ from django.conf.urls.static import static
 from .import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',include('admin_honeypot.urls',namespace='admin_honeypot')),
+    path('SecureAdminLogin/', admin.site.urls),
     path('',include(review.reviewurls)),
     path('genre/', include(genre.genreurls)),
     path('category/', include(category.categoryurls)),
